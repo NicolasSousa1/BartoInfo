@@ -1,1 +1,1 @@
-# BARTO-SHOP
+# InfoTec
