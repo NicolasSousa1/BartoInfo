@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+/* Cabeçalho fixo */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #fff;
+  color: #000;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #ddd;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #000;
+  
+}
+
+.site-name {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  transition: color 0.3s, border-bottom 0.3s;
+  padding-bottom: 2px;
+}
+
+nav ul li a:hover {
+  color: #e60000;
+  border-bottom: 2px solid #e60000;
+}
+
+/* Hero */
+.hero {
+  position: relative;
+  background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+
+.hero-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateX(100%);
+  animation: slideCover 1.2s ease forwards;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #fff;
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: -8px 0 25px rgba(0,0,0,0.4);
+  z-index: -1;
+}
+
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #e60000;
+  clip-path: polygon(19% 0, 20% 0, 1% 100%, 0 100%);
+  z-index: -2;
+}
+
+.hero-text {
+  max-width: 70%;
+  padding-left: 40px;
+}
+
+.hero-text h1,
+.hero-text p {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.7s;
+}
+
+/* Animações */
+@keyframes slideCover {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInText {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Seção Objetivos */
+.objetivos {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.objetivos h2 {
+  font-size: 2rem;
+  margin-bottom: 50px;
+  color: #000;
+}
+
+.objetivo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  gap: 40px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+.objetivo-row.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.objetivo-row img {
+  width: 50%;
+  object-fit: cover;
+}
+
+.objetivo-content {
+  width: 50%;
+  padding: 30px;
+  text-align: left;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.objetivo-row.show .objetivo-content {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.3s;
+}
+
+.objetivo-content h3 {
+  color: #000;
+  margin-bottom: 15px;
+  font-size: 1.6rem;
+  transition: color 0.3s;
+}
+
+.objetivo-content h3:hover { color: #e60000; }
+
+.objetivo-content p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+.reverse { flex-direction: row-reverse; }
+
+/* Rodapé */
+footer {
+  background: #fff;
+  color: #000;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #ddd;
+  font-size: 0.95rem;
+}
+
+footer a {
+  color: #000;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+footer a:hover { color: #e60000; }
