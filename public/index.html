@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz Vocacional | Bartô Info</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header id="header">
+  <div class="header-content">
+    <div class="header-left">
+      <div class="logoo">
+        <img src="/imagens/logo/Logoo.png ">
+      </div>
+      <div class="site-name">Bartô Info</div>
+    </div>
+
+    <div class="header-center">
+      <ul class="menu">
+        <li><a href="/paginas/index.html">INÍCIO</a></li>
+        <li><a href="#">SOBRE</a></li>
+        <li><a href="#">CURSOS</a></li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <div class="quiz"><a href="#">Quiz</a></div>
+    </div>
+  </div>
+</header>
+
+  <!-- Seção principal do Quiz -->
+  <main class="quiz-container">
+    <section class="quiz-box">
+      <h2>Descubra qual curso combina com você 🎓</h2>
+      <p>Responda as perguntas abaixo e descubra qual curso técnico mais combina com o seu perfil.</p>
+
+      <form id="quizForm">
+        <label for="interesse">1️⃣ Qual área você mais se interessa?</label>
+        <select id="interesse" name="interesse" required>
+          <option value="">Selecione</option>
+          <option value="tecnologia">Tecnologia</option>
+          <option value="saude">Saúde</option>
+          <option value="gestao">Gestão</option>
+          <option value="industria">Indústria</option>
+          <option value="design">Design</option>
+        </select>
+
+        <label for="habilidades">2️⃣ Quais são suas principais habilidades?</label>
+        <textarea id="habilidades" name="habilidades" placeholder="Ex: resolver problemas, trabalhar em equipe..." required></textarea>
+
+        <label for="objetivo">3️⃣ Qual é seu principal objetivo profissional?</label>
+        <textarea id="objetivo" name="objetivo" placeholder="Ex: conseguir um bom emprego, abrir um negócio, ajudar pessoas..." required></textarea>
+
+        <button type="submit">Analisar Respostas</button>
+      </form>
+
+      <div id="resultado"></div>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Orientação Técnica. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+  
+</body>
+</html>
