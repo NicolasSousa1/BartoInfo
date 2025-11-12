@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bartô Info</title>
+
+    <link rel="stylesheet" href="/estilos/estilos-gerais/header.css">
+    <link rel="stylesheet" href="/estilos/estilos-gerais/body.css">
+    <link rel="stylesheet" href="/estilos/estilos-gerais/logo.css">
+    <link rel="stylesheet" href="/estilos/estilos-gerais/footer.css">
+    <link rel="stylesheet" href="/estilos/estilos-gerais/hero.css">
+
+    <link rel="stylesheet" href="/estilos/responsive/responsive.css">
+
+    <link rel="stylesheet" href="/estilos/estilos-p/cursos.css">
+
+</head>
+<body>
+<header id="header">
+  <div class="header-content">
+    <div class="header-left">
+      <div class="logoo">
+        <img src="/imagens/logo/Logoo.png ">
+      </div>
+      <div class="site-name">Bartô Info</div>
+    </div>
+
+    <div class="header-center">
+      <ul class="menu">
+        <li><a href="index.html">INÍCIO</a></li>
+        <li><a href="sobre.html">SOBRE</a></li>
+        <li><a href="cursos.html">CURSOS</a></li>
+      </ul>
+    </div>
+
+    <div class="header-right">
+      <div class="quiz"><a href="/public/index.html">Quiz</a></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <div class="logo">
+        <img src="/imagens/logo/Logo.png ">
+      </div>
+      <div class="hero-text">
+        <div class="letras">
+          <h1>Conheça os professores da Etec</h1>
+          <p>Nosso site ajuda estudantes a conhecer os cursos técnicos,
+          explorar suas habilidades e tomar decisões mais conscientes para
+          reduzir a evasão escolar.</p>
+        </div>
+      </div>
+      
+    </div>
+    <div class="hero-content">
+      <div class="hero-bg"></div>
+      
+    </div>
+  </section>
+
+
+  <div class="secao2" id="catalogo">
+        <div class="terceira-tela">
+ 
+           <h1>NOSSOS <span class="destaque-titulo">CURSOS</span></h1>
+            <p>Descubra o curso que melhor se encaixa com você!</p>
+ 
+            <div class="slider">
+                <input type="radio" name="card" id="c-1">
+                <input type="radio" name="card" id="c-2">
+                <input type="radio" name="card" id="c-3" checked>
+                <input type="radio" name="card" id="c-4">
+                <input type="radio" name="card" id="c-5">
+ 
+                <div class="cards">
+                    <label for="c-1" class="item">
+                        <div class="main_content">
+                            <div class="img">
+                                <img src="/imagens/ams.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="actions">
+                       
+                            <button class="btn-info">Informações</button>
+                        </div>
+                    </label>
+ 
+                    <label for="c-2" class="item">
+                        <div class="main_content">
+                            <div class="img">
+                                <img src="/imagens/info.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="actions">
+                          <button class="btn-info">Informações</button>
+                        </div>
+                    </label>
+ 
+                    <label for="c-3" class="item">
+                        <div class="main_content">
+                            <div class="img">
+                                <img src="/imagens/rh.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="btn-info">Informações</button>
+                        </div>
+                    </label>
+ 
+                    <label for="c-4" class="item">
+                        <div class="main_content">
+                            <div class="img">
+                                <img src="/imagens/tst.jpg" alt="">
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="btn-info">Informações</button>
+                        </div>
+                    </label>
+ 
+                    <label for="c-5" class="item">
+                        <div class="main_content">
+                            <div class="img">
+                                <img src="/imagens/log.jpg"
+                                    alt="">
+                            </div>
+                        </div>
+                        <div class="actions">
+                            <button class="btn-info">Informações</button>
+                        </div>
+                    </label>
+                </div>
+ 
+                <div class="dots">
+                    <label for="c-1"></label>
+                    <label for="c-2"></label>
+                    <label for="c-3"></label>
+                    <label for="c-4"></label>
+                    <label for="c-5"></label>
+                </div>
+            </div>
+ 
+        </div>
+    </div>
+
+
+
+    <div id="course-details-panel" class="course-details-panel-wrapper">
+        <div class="modal-content-wrapper">
+            <button class="close-btn">&times;</button> 
+            <div class="course-details-content">
+                <div class="details-image-container">
+                    <img id="details-image" src="" alt="Imagem do Curso">
+                </div>
+                <div class="details-info-container">
+                    <h2 id="details-title">Título do Curso</h2>
+                    <p id="details-description">Descrição completa do curso será carregada aqui.</p>
+                  <div class="actions">
+    <a href="https://etecanhanguera.cps.sp.gov.br/vestibulinho-etec-1o-semestre-de-2026/" class="btn-matricula" target="_blank">
+        Matricule-se Agora
+    </a>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<footer>
+    <p>&copy; 2025 Orientação Técnica. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+  </footer>
+
+    <script src="/scripts/script.js"></script>
+
+</body>
+</html>

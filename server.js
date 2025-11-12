@@ -95,7 +95,7 @@ app.post("/quiz", async (req, res) => {
         Técnicas para prevenir doenças e acidentes de trabalho são o foco do curso. Além do português para interpretar leis e as normas obrigatórias no ambiente de trabalho, o estudante aprenderá física para estudar o ruído e a vibração das ferramentas e equipamentos utilizados pelos funcionários da empresa. O aluno vai aprender primeiros socorros e combate a incêndio. 
 
         Informática para internet - AMS: 
-        Parecido com Informática para internet, porém A modalidade permite que em um período de cinco anos, o estudante conclua o ensino médio, técnico e superior. Nos três primeiros, os alunos cursam Ensino Médio técnico e desenvolvem 200 horas de formação profissional em uma empresa parceira. Então, sem vestibular, os estudantes seguem para o Ensino Superior, que será concluído em mais dois anos.  
+        Parecido com Informática para internet, porém A modalidade permite que em um período de cinco anos, o estudante conclua o ensino médio, técnico e superior. Nos três primeiros, os alunos cursam Ensino Médio técnico e desenvolvem 200 horas de formação profissional em uma empresa parceira. Então, sem vestibular, os estudantes seguem para o Ensino Superior, que será concluído em mais dois anos.
       
       Responda de forma parecida com o seguinte modelo de resposta, não precisa ser exatamente igual ao modelo, se necessário faça alterações, mas sempre separe as repostas em parágrafos.
       

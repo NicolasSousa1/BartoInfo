@@ -1,0 +1,192 @@
+/* Hero */
+.hero {
+  position: relative;
+  background:#5A1313;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+ 
+.hero-bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+ 
+.hero-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateX(100%);
+  animation: slideCover 1.2s ease forwards;
+}
+ 
+.hero-bg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('/imagens/eteec.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: -8px 0 25px rgba(0,0,0,0.4);
+  z-index: -1;
+}
+ 
+.hero-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #e60000;
+  clip-path: polygon(19% 0, 20% 0, 1% 100%, 0 100%);
+  z-index: -2;
+}
+.hero-text {
+  max-width: 70%;
+  padding-left: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+.hero-text h1 {
+  font-size: 2.5rem; /* Aumentei de 2rem para 3rem */
+  margin: 0;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.hero-text p {
+  font-size: 2rem; /* Aumentei de 1rem para 1.2rem */
+  margin: 0;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.7s;
+
+}.segundo {
+  position: relative;
+  background:#5A1313;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+ 
+.segundo-bg::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 0;
+}
+ 
+.segundo-content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 55%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  transform: translateX(100%);
+  animation: slideCover 1.2s ease forwards;
+}
+ 
+.segundo-bg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('/imagens/eteec.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+  box-shadow: -8px 0 25px rgba(0,0,0,0.4);
+  z-index: -1;
+}
+ 
+.segundo-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background: #e60000;
+  clip-path: polygon(19% 0, 20% 0, 1% 100%, 0 100%);
+  z-index: -2;
+}
+.segundo-text {
+  max-width: 70%;
+  padding-left: 30px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+}
+.segundo-text h1 {
+  font-size: 2.5rem; /* Aumentei de 2rem para 3rem */
+  margin: 0;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.3s;
+}
+
+.segundo-text p {
+  font-size: 2rem; /* Aumentei de 1rem para 1.2rem */
+  margin: 0;
+  margin-bottom: 8px;
+  line-height: 1.6;
+  animation: fadeInUp 0.8s ease forwards;
+  animation-delay: 1.7s;
+}
+
+.letras {
+  font-size: 1.1rem; /* Aumentei de 0.95rem para 1.1rem */
+  letter-spacing: 0.4px;
+  line-height: 1.7;
+}
+
+ 
+/* Animações */
+@keyframes slideCover {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+ 
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+ 
+@keyframes slideInText {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}

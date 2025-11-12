@@ -1,0 +1,138 @@
+/* HEADER */
+
+header {
+  padding: 15px 50px;
+  position: fixed;
+  top: 5%;
+  left: 40%;
+  width: 60%;
+  transition: all 0.4s ease;
+  border-radius: 30px;
+  background: linear-gradient(to right, #F1F0EE 75%, #5A1313 25%);
+  z-index: 1000;
+}
+
+header.scrolled .logoo {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 45px;
+  z-index: 2;
+}
+ 
+header.scrolled .logoo img {
+  width: 25px;  /* ou outro tamanho desejado */
+  height: auto;
+}
+ 
+header.scrolled .header-left {
+  width: 100%;
+  justify-content: center;
+}
+ 
+
+header.scrolled {
+  top: 0;
+  left: 0;
+  width: 100%;
+  border-radius: 0%;
+  background: linear-gradient(to right, #F1F0EE 80%, #5A1313 20%);
+}
+ 
+
+.header-content {
+  display: flex;
+  height: 100%;
+}
+ 
+.header-left {
+  width: 30%; /* ajustável */
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+ 
+.site-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+ 
+.header-center {
+  width: 40%; /* ajustável */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+ 
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 25px; /* diminui espaço entre os itens do menu */
+  margin: 0;
+  padding: 0;
+}
+ 
+.menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+ 
+.menu li a:hover {
+  color: #e60000;
+}
+ 
+.header-right {
+  width: 30%; /* mesmo percentual do gradiente vermelho */
+  display: flex;
+  justify-content: center; /* Alinhando à esquerda */
+  align-items: center;
+  padding-left: 85px; /* Ajustando a div mais para a direita */
+}
+ 
+.quiz a {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+}
+ 
+.quiz a:hover {
+  color: #ffbbbb;
+}
+
+
+
+
+
+
+header.hidden {
+  top: -100px;
+  opacity: 0;
+}
+
+.header-hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* zona de detecção do hover */
+  z-index: 999;
+};
+
+.header-hover-zone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px; /* zona de detecção do hover */
+  z-index: 999;
+};

@@ -1,0 +1,27 @@
+.logo {
+  position: absolute;
+  top: 40px;
+  left: 45px;
+  right: 1000px;
+  width: 40px;
+  height: auto;
+  z-index: 2;
+}
+.logo img {
+  width: 40px; /* ou outro valor menor se quiser ainda mais compacto */
+  height: auto;
+}
+.logoo {
+  display: none;
+  position: absolute;
+  top: 10px;
+  left: 45px;
+  right: 1000px;
+  width: 43px;
+  height: auto;
+  z-index: 2;
+}
+.logoo img {
+  width: 10px; /* ou outro valor menor se quiser ainda mais compacto */
+  height: auto;
+}
