@@ -39,7 +39,7 @@
       <p>Responda as perguntas abaixo e descubra qual curso técnico mais combina com o seu perfil.</p>
 
       <form id="quizForm">
-        <label for="interesse">1️⃣ Qual área você mais se interessa?</label>
+        <label for="interesse">1 Qual área você mais se interessa?</label>
         <select id="interesse" name="interesse" required>
           <option value="">Selecione</option>
           <option value="tecnologia">Tecnologia</option>
@@ -49,11 +49,40 @@
           <option value="design">Design</option>
         </select>
 
-        <label for="habilidades">2️⃣ Quais são suas principais habilidades?</label>
+        <label for="atividades">2 Você gosta mais de atividades práticas ou teóricas?</label>
+        <select id="atividades" name="atividades" required>
+          <option value="">Selecione</option>
+          <option value="tecnologia">Atividades práticas</option>
+          <option value="saude">Atividades teóricas</option>
+          
+        </select>
+
+        <label for="ajudar">2 Você gosta de ajudar pessoas a resolver problemas?</label>
+        <select id="ajudar" name="ajudar" required>
+          <option value="">Selecione</option>
+          <option value="tecnologia">Sim</option>
+          <option value="saude">Não</option>
+          
+        </select>
+
+        <label for="comunicacao">2 Você se considera comunicativo?</label>
+        <select id="comunicacao" name="comunicacao" required>
+          <option value="">Selecione</option>
+          <option value="tecnologia">Sim</option>
+          <option value="saude">Não</option>
+          
+        </select>
+
+        <label for="habilidades">2 Quais são suas principais habilidades?</label>
         <textarea id="habilidades" name="habilidades" placeholder="Ex: resolver problemas, trabalhar em equipe..." required></textarea>
 
-        <label for="objetivo">3️⃣ Qual é seu principal objetivo profissional?</label>
-        <textarea id="objetivo" name="objetivo" placeholder="Ex: conseguir um bom emprego, abrir um negócio, ajudar pessoas..." required></textarea>
+        <label for="faculdade">2 Você pretende fazer faculdade? Se sim, em qual área?</label>
+        <textarea id="faculdade" name="faculdade" placeholder="Ex: Medicina, Ciência da computação, administração..."></textarea>
+
+        
+
+        <label for="objetivo">3 Qual é seu principal objetivo profissional?</label>
+        <textarea id="objetivo" name="objetivo" placeholder="Ex: conseguir um bom emprego, abrir um negócio, ajudar pessoas..."></textarea>
 
         <button type="submit">Analisar Respostas</button>
       </form>
