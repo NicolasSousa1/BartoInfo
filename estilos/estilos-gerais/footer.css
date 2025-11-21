@@ -1,16 +1,112 @@
-/* FOOTER */
-
-footer {
-  background: #F1F0EE;
-  color: #000;
+footer.footer {
+  background-color: #5A1313;
+  color: #222;
+  padding: 50px 20px;
+  font-family: "Segoe UI", Arial, sans-serif;
   text-align: center;
-  padding: 20px;
-  border-top: 2px solid #ddd;
-  font-size: 0.95rem;
 }
- 
-footer a {
-  color: #000;
+
+/* ===========================
+   TÍTULOS DO FOOTER
+=========================== */
+footer.footer h2,
+footer.footer h3 {
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: #ffffff;
+  margin-bottom: 15px;
+}
+
+footer.footer p {
+  font-size: 16px;
+  line-height: 1.6;
+   color: #d1baba;
+}
+
+/* ===========================
+   EMAIL + WHATSAPP
+=========================== */
+.footer-contact {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+}
+
+.footer-contact p {
+  margin: 0;
+  font-weight: 600;
+}
+
+.footer-contact a {
+  color: #ffffff;
+  font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
+}
+
+.footer-contact a:hover {
+  color: #c07b7b;
+  text-decoration: underline;
+}
+
+/* ===========================
+   REDES SOCIAIS
+=========================== */
+.footer-social-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social .social-icon {
+  width: 35px;
+  height: auto;
+  border-radius: 20%; /* arredondar */
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.footer-social .social-icon:hover {
+  transform: scale(1.15);
+  filter: brightness(2) saturate(0.6);
+}
+
+
+/* ===========================
+   DIVISÓRIA
+=========================== */
+.footer-divider {
+  border: none;
+  border-top: 1.5px solid #896f6f;
+  width: 1300px;     /* linha menor e elegante */
+  margin: 40px auto;
+  opacity: 0.8;
+}
+
+/* ===========================
+   DIREITOS AUTORAIS
+=========================== */
+.footer-bottom {
+  text-align: center;
+  font-size: 15px;
+  color: #ffffff;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.footer-bottom a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-bottom a:hover {
+  color: #7A0000;
+  text-decoration: underline;
 }
