@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bartô Info</title>
 
-    <link rel="stylesheet" href="/estilos/estilos-gerais/header.css">
-    <link rel="stylesheet" href="/estilos/estilos-gerais/body.css">
-    <link rel="stylesheet" href="/estilos/estilos-gerais/logo.css">
-    <link rel="stylesheet" href="/estilos/estilos-gerais/footer.css">
-    <link rel="stylesheet" href="/estilos/estilos-gerais/hero.css">
+  <link rel="stylesheet" href="/estilos/estilos-gerais/header.css">
+  <link rel="stylesheet" href="/estilos/estilos-gerais/body.css">
+  <link rel="stylesheet" href="/estilos/estilos-gerais/logo.css">
+  <link rel="stylesheet" href="/estilos/estilos-gerais/footer.css">
+  <link rel="stylesheet" href="/estilos/estilos-gerais/hero.css">
 
-    <link rel="stylesheet" href="/estilos/responsive/responsive.css">
+  <link rel="stylesheet" href="/estilos/responsive/responsive.css">
 
-    <link rel="stylesheet" href="/estilos/estilos-p/cursos.css">
+  <link rel="stylesheet" href="/estilos/estilos-p/cursos.css">
 
 </head>
 <body>
@@ -41,142 +41,205 @@
 </header>
 
 <!-- Hero -->
-  <section class="hero">
+<section class="hero">
+  <div class="hero-text">
+    <div class="logo">
+      <img src="/imagens/logo/Logo.png ">
+    </div>
     <div class="hero-text">
-      <div class="logo">
-        <img src="/imagens/logo/Logo.png ">
+      <div class="letras">
+        <h1>Conheça os cursos da Etec!</h1>
+        <p>Nossa página apresenta todos os cursos oferecidos pela escola, ajudando os estudantes a entender cada área, descobrir novas possibilidades e escolher o caminho que mais combina com seus interesses e objetivos.</p>
       </div>
-      <div class="hero-text">
-        <div class="letras">
-          <h1>Conheça os professores da Etec</h1>
-          <p>Nosso site ajuda estudantes a conhecer os cursos técnicos,
-          explorar suas habilidades e tomar decisões mais conscientes para
-          reduzir a evasão escolar.</p>
-        </div>
-      </div>
-      
     </div>
-    <div class="hero-content">
-      <div class="hero-bg"></div>
-      
-    </div>
-  </section>
+  </div>
+  <div class="hero-content">
+    <div class="hero-bg"></div>
+  </div>
+</section>
 
+<div class="secao2" id="catalogo">
+  <div class="terceira-tela">
 
-  <div class="secao2" id="catalogo">
-        <div class="terceira-tela">
- 
-           <h1>NOSSOS <span class="destaque-titulo">CURSOS</span></h1>
-            <p>Descubra o curso que melhor se encaixa com você!</p>
- 
-            <div class="slider">
-                <input type="radio" name="card" id="c-1">
-                <input type="radio" name="card" id="c-2">
-                <input type="radio" name="card" id="c-3" checked>
-                <input type="radio" name="card" id="c-4">
-                <input type="radio" name="card" id="c-5">
- 
-                <div class="cards">
-                    <label for="c-1" class="item">
-                        <div class="main_content">
-                            <div class="img">
-                                <img src="/imagens/ams.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="actions">
-                       
-                            <button class="btn-info">Informações</button>
-                        </div>
-                    </label>
- 
-                    <label for="c-2" class="item">
-                        <div class="main_content">
-                            <div class="img">
-                                <img src="/imagens/info.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="actions">
-                          <button class="btn-info">Informações</button>
-                        </div>
-                    </label>
- 
-                    <label for="c-3" class="item">
-                        <div class="main_content">
-                            <div class="img">
-                                <img src="/imagens/rh.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <button class="btn-info">Informações</button>
-                        </div>
-                    </label>
- 
-                    <label for="c-4" class="item">
-                        <div class="main_content">
-                            <div class="img">
-                                <img src="/imagens/tst.jpg" alt="">
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <button class="btn-info">Informações</button>
-                        </div>
-                    </label>
- 
-                    <label for="c-5" class="item">
-                        <div class="main_content">
-                            <div class="img">
-                                <img src="/imagens/log.jpg"
-                                    alt="">
-                            </div>
-                        </div>
-                        <div class="actions">
-                            <button class="btn-info">Informações</button>
-                        </div>
-                    </label>
-                </div>
- 
-                <div class="dots">
-                    <label for="c-1"></label>
-                    <label for="c-2"></label>
-                    <label for="c-3"></label>
-                    <label for="c-4"></label>
-                    <label for="c-5"></label>
-                </div>
-            </div>
- 
-        </div>
-    </div>
+      <h1>NOSSOS <span class="destaque-titulo">CURSOS</span></h1>
+      <p>Descubra o curso que melhor se encaixa com você!</p>
 
+      <div class="slider">
+          <input type="radio" name="card" id="c-1">
+          <input type="radio" name="card" id="c-2">
+          <input type="radio" name="card" id="c-3" checked>
+          <input type="radio" name="card" id="c-4">
+          <input type="radio" name="card" id="c-5">
 
+          <div class="cards">
 
-    <div id="course-details-panel" class="course-details-panel-wrapper">
-        <div class="modal-content-wrapper">
-            <button class="close-btn">&times;</button> 
-            <div class="course-details-content">
-                <div class="details-image-container">
-                    <img id="details-image" src="" alt="Imagem do Curso">
-                </div>
-                <div class="details-info-container">
-                    <h2 id="details-title">Título do Curso</h2>
-                    <p id="details-description">Descrição completa do curso será carregada aqui.</p>
+              <!-- CARD 1 -->
+              <label for="c-1" class="item">
+
+                  <div class="main_content">
+                      <div class="img">
+                          <img src="/imagens/ams.jpg" alt="">
+                      </div>
+                  </div>
+
+                  
+
                   <div class="actions">
-    <a href="https://etecanhanguera.cps.sp.gov.br/vestibulinho-etec-1o-semestre-de-2026/" class="btn-matricula" target="_blank">
-        Matricule-se Agora
-    </a>
+                    <div class="course-title">AMS</div>
+                      <button class="btn-info">Informações</button>
+                  </div>
+              </label>
+
+              <!-- CARD 2 -->
+              <label for="c-2" class="item">
+                  <div class="main_content">
+                      <div class="img">
+                          <img src="/imagens/info.jpg" alt="">
+                      </div>
+                  </div>
+
+                  <!-- 🔴 NOME DO CURSO ADICIONADO -->
+
+                  <div class="actions">
+                    <div class="course-title">Informática</div>
+                      <button class="btn-info">Informações</button>
+                  </div>
+              </label>
+
+              <!-- CARD 3 -->
+              <label for="c-3" class="item">
+                  <div class="main_content">
+                      <div class="img">
+                          <img src="/imagens/rh.jpg" alt="">
+                      </div>
+                  </div>
+
+                  <!-- 🔴 NOME DO CURSO ADICIONADO -->
+
+                  <div class="actions">
+                    <div class="course-title">Recursos Humanos</div>
+                      <button class="btn-info">Informações</button>
+                  </div>
+              </label>
+
+              <!-- CARD 4 -->
+              <label for="c-4" class="item">
+                  <div class="main_content">
+                      <div class="img">
+                          <img src="/imagens/tst.jpg" alt="">
+                      </div>
+                  </div>
+
+                  <!-- 🔴 NOME DO CURSO ADICIONADO -->
+
+                  <div class="actions">
+                    <div class="course-title">TST</div>
+                      <button class="btn-info">Informações</button>
+                  </div>
+              </label>
+
+              <!-- CARD 5 -->
+              <label for="c-5" class="item">
+                  <div class="main_content">
+                      <div class="img">
+                          <img src="/imagens/log.jpg" alt="">
+                      </div>
+                  </div>
+
+                  <!-- 🔴 NOME DO CURSO ADICIONADO -->
+
+                  <div class="actions">
+                    <div class="course-title">Logística</div>
+                      <button class="btn-info">Informações</button>
+                  </div>
+              </label>
+
+          </div>
+
+          <div class="dots">
+              <label for="c-1"></label>
+              <label for="c-2"></label>
+              <label for="c-3"></label>
+              <label for="c-4"></label>
+              <label for="c-5"></label>
+          </div>
+      </div>
+  </div>
 </div>
-                </div>
-            </div>
-        </div>
+
+<!-- PAINEL -->
+<div id="course-details-panel" class="course-details-panel-wrapper">
+  <div class="modal-content-wrapper">
+      <button class="close-btn">&times;</button> 
+      <div class="course-details-content">
+          <div class="details-image-container">
+              <img id="details-image" src="" alt="Imagem do Curso">
+          </div>
+          <div class="details-info-container">
+              <h2 id="details-title">Título do Curso</h2>
+              <p id="details-description">Descrição completa do curso será carregada aqui.</p>
+
+              <div class="actions">
+                <a href="https://etecanhanguera.cps.sp.gov.br/vestibulinho-etec-1o-semestre-de-2026/" class="btn-matricula" target="_blank">
+                    Matricule-se Agora
+                </a>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<section class="secao3-detalhes">
+  <div class="detalhes-container">
+      <div class="detalhe-card">
+          <h3 class="detalhe-titulo">Duração do Curso</h3>
+          <p id="detalhe-duracao" class="detalhe-conteudo">Selecione um curso para ver a duração.</p>
+          <h3 class="detalhe-titulo">Horários de aula</h3>
+          <p id="detalhe-horario" class="detalhe-conteudo">Selecione um curso para ver o horário.</p>
+      </div>
+
+      <div class="detalhe-card">
+          <h3 class="detalhe-titulo">Áreas de Atuação</h3>
+          <ul id="detalhe-atuacao" class="detalhe-lista">
+              <li>Selecione um curso para ver as áreas.</li>
+          </ul>
+      </div>
+
+      <div class="detalhe-card">
+ <h3 class="detalhe-titulo">Aprendizado</h3>
+          <ul id="detalhe-requisitos" class="detalhe-lista">
+              <li>Selecione um curso para ver o que irá aprender.</li>
+          </ul>
+      </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-contact">
+    <p>Email: <a href="mailto:e262.secretaria@etec.sp.gov.br">e262.secretaria@etec.sp.gov.br</a></p>
+    <p>WhatsApp: <a href="https://wa.me/5511990245508" target="_blank">(11) 99024-5508</a></p>
+  </div>
+
+ 
+
+  <div class="footer-social-wrapper">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/etecanhanguera?igsh=MWJnNXhvYTV0bjA0dw=="><img src="/imagens/instagram.png" class="social-icon"></a>
+      <a href="https://www.facebook.com/share/1AAzm5iAnv/?mibextid=wwXIfr"><img src="/imagens/facebook.png" class="social-icon"></a>
+      <a href="https://wa.me/5511990245508"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" class="social-icon"></a>
     </div>
+  </div>
 
+  <hr class="footer-divider">
 
-<footer>
-    <p>&copy; 2025 Orientação Técnica. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
-  </footer>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Nome do Site. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+  </div>
 
-    <script src="/scripts/script.js"></script>
+</footer>
+
+<script src="/scripts/script.js"></script>
 
 </body>
 </html>

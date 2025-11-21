@@ -1,5 +1,31 @@
 /*CARTÕES*/
 
+/* ADICIONADO: título do curso sobre o botão */
+.course-title {
+  position: absolute;
+  bottom: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 800;
+  text-shadow: 0 4px 20px rgba(0,0,0,0.8);
+  z-index: 20;
+}
+
+/*CARTÕES*/
+
+.secao2 .terceira-tela {
+  height: 90vh;
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+  text-align: center;
+  position: relative;
+}
+
+/* (RESTO DO SEU CSS MANTIDO IGUAL) */
+
+
 .secao2 .terceira-tela {
   height: 90vh;
   background-color: #f5f5f5;
@@ -53,17 +79,14 @@ font-size: 22px; /* Aumenta o subtítulo */
   width: 350px;
   height: 450px;
   border-radius: 20px;
-  background-color: #5A1313;
-  border: none;
   position: absolute;
   top: 0;
-  text-align: center;
+  /* Removi 'text-align: center;' se o conteúdo for só a imagem */
   box-sizing: border-box;
   user-select: none;
   cursor: pointer;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35); /* --- SOMBRA SEMPRE PRESENTE --- */
   transition: transform 0.4s, box-shadow 0.3s ease;
-  overflow: hidden;
+  overflow: hidden; /* Mantém a imagem dentro dos limites arredondados */
 }
 
 /* --- SOMBRA MAIS FORTE NO HOVER --- */
@@ -71,22 +94,10 @@ font-size: 22px; /* Aumenta o subtítulo */
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
 }
 
-/* --- REDUZ BRANCO DO HOVER (MENOR) --- */
-.secao2 .terceira-tela .slider .cards .item::before {
-  content: "";
-  position: absolute;
-  bottom: -20%;
-  left: 0;
-  width: 100%;
-  height: 20%;
-  background-color: #5A1313;
-  transition: bottom 0.5s ease;
-  z-index: 5;
-}
 
-.secao2 .terceira-tela .slider .cards .item:hover::before {
-  bottom: 0;
-}
+
+
+
 
 .secao2 .terceira-tela .slider .cards .item > * {
   position: relative;
@@ -101,27 +112,49 @@ font-size: 22px; /* Aumenta o subtítulo */
 
 /* --- IMAGEM COBRINDO TODA A ÁREA --- */
 .secao2 .terceira-tela .slider .cards .item .main_content .img {
+  position: relative;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+   border-radius: 20px;
+}
+
+.secao2 .terceira-tela .slider .cards .item .main_content .img::after {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  overflow: hidden;
-  border-radius: 20px;
+  /* Cor preta semi-transparente (ajuste o 0.4 para mais escuro/claro) */
+  background-color: rgba(0, 0, 0, 0.4); 
+  z-index: 2; /* Fica acima da imagem (z-index: 1) */
+  opacity: 0; /* Começa invisível */
+  transition: opacity 0.4s ease;
+  border-radius: 20px; /* Herda o arredondamento do card */
 }
 
+/* 3. Ativa o escurecimento no hover do CARD */
+.secao2 .terceira-tela .slider .cards .item:hover .main_content .img::after {
+  opacity: 1; /* Torna o overlay visível */
+}
+
+/* Certifique-se de que todas as imagens dentro dos cards sejam tratadas da mesma maneira */
 .secao2 .terceira-tela .slider .cards .item .main_content .img img {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 110%;
-  height: 110%;
-  object-fit: cover;
-  object-position: center;
+  width: 110%; /* Garante que a imagem cubra todo o card */
+  height: 110%; /* Garante que a imagem cubra todo o card */
+  object-fit: cover; /* Isso garante que a imagem preencha a área sem distorcer */
+  object-position: center; /* Centraliza a imagem dentro do espaço */
   transform: translate(-50%, -50%);
   border-radius: 20px;
   z-index: 1;
 }
+
 /* ----------------------------------- */
 
 /* --- CENTRALIZA BOTÃO DE RESERVA NA ALTURA DO CARTÃO --- */
@@ -147,20 +180,6 @@ font-size: 22px; /* Aumenta o subtítulo */
   transform: translate(-50%, -50%);
 }
 
-/* --- QUANTIDADE (se houver) --- */
-.secao2 .terceira-tela .slider .cards .item .actions .quantidade {
-  width: 100px;
-  height: 35px;
-  border-radius: 10px;
-  background-color: #5A1313;
-  color: #071828;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: 600;
-  font-size: 16px;
-  border: 2px solid #063E59;
-}
 
 .input-quantidade:focus {
   border-color: #720c0c;
@@ -255,7 +274,7 @@ font-size: 22px; /* Aumenta o subtítulo */
 #c-4:checked ~ .cards label[for="c-4"],
 #c-5:checked ~ .cards label[for="c-5"] {
   z-index: 4;
-  padding: 30px;
+
 }
 
 .header-hover-zone {
@@ -266,6 +285,24 @@ font-size: 22px; /* Aumenta o subtítulo */
   height: 50px; /* zona de detecção do hover */
   z-index: 999;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*PAINEL*/
 
@@ -424,7 +461,88 @@ font-size: 22px; /* Aumenta o subtítulo */
     }
 }
 
+/* --- SEÇÃO 3: DETALHES ADICIONAIS --- */
+.secao3-detalhes {
+  background-color: #ffffff; /* Fundo branco solicitado */
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.detalhes-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  flex-wrap: wrap; /* Permite quebrar linha em telas menores */
+}
+
+.detalhe-card {
+  background-color: #330606; /* Um fundo cinza claro sutil para destacar */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 40px;
+  flex: 1; /* Distribui o espaço igualmente */
+  min-width: 250px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.detalhe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.detalhe-titulo {
+  color: #ffffff; /* Cor de destaque */
+  font-size: 2rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.detalhe-conteudo{
+  font-size: 1.5rem;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: center; /* Alinhamento do conteúdo */
+  padding: 0 10px;
 
 
+} .detalhe-lista {
+  font-size: 1.5rem;
+  color: #ffffff;
+  line-height: 1.6;
+  text-align: left; /* Alinhamento do conteúdo */
+  padding: 0 10px;
+}
 
+.detalhe-lista {
+  list-style-type: none;
+  padding-left: 0;
+}
 
+.detalhe-lista li {
+  margin-bottom: 5px;
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+.detalhe-lista li::before {
+  content: "•"; /* Ícone de marcador customizado */
+  color: #fff;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2em;
+}
+
+/* Responsividade simples */
+@media (max-width: 800px) {
+  .detalhes-container {
+      flex-direction: column;
+      align-items: center;
+  }
+  .detalhe-card {
+      width: 90%;
+      max-width: 400px;
+  }
+}
