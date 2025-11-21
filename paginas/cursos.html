@@ -17,18 +17,21 @@
 
 </head>
 <body>
-<header id="header">
+
+  <header id="header">
+
+  <!-- MENU DESKTOP (tudo normal) -->
   <div class="header-content">
     <div class="header-left">
       <div class="logoo">
-        <img src="/imagens/logo/Logoo.png ">
+        <img src="/imagens/logo/Logoo.png">
       </div>
       <div class="site-name">Bartô Info</div>
     </div>
 
     <div class="header-center">
       <ul class="menu">
-        <li><a href="index.html">INÍCIO</a></li>
+        <li><a href="index.html">Início</a></li>
         <li><a href="sobre.html">SOBRE</a></li>
         <li><a href="cursos.html">CURSOS</a></li>
       </ul>
@@ -38,6 +41,32 @@
       <div class="quiz"><a href="/public/index.html">Quiz</a></div>
     </div>
   </div>
+
+
+  <!-- ====================== -->
+  <!--  MENU MOBILE CORRETO   -->
+  <!-- ====================== -->
+
+  <!-- Botão Hamburguer (agora no topo, separado do header desktop) -->
+  <div class="mobile-header">
+    <img src="/imagens/logo/Logoo.png" class="mobile-logo">
+    <div id="menu-toggle" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <nav id="mobile-nav" class="mobile-nav">
+    <ul>
+      <li><a href="/paginas/index.html">Início</a></li>
+      <li><a href="/paginas/sobre.html">Sobre</a></li>
+      <li><a href="/paginas/cursos.html">Cursos</a></li>
+      <li><a href="/public/index.html" class="mobile-quiz">Quiz</a></li>
+    </ul>
+  </nav>
+
 </header>
 
 <!-- Hero -->
