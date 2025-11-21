@@ -12,25 +12,30 @@
     <link rel="stylesheet" href="/estilos/estilos-gerais/hero.css">
 
     <link rel="stylesheet" href="/estilos/responsive/responsive.css">
+    <link rel="stylesheet" href="/estilos/responsive/header-responsive.css">
 
+    <link rel="stylesheet" href="/estilos/estilos-p/sobre.css">
     <link rel="stylesheet" href="/estilos/estilos-p/index.css">
 
 </head>
 <body>
-<header id="header">
+
+  <header id="header">
+
+  <!-- MENU DESKTOP (tudo normal) -->
   <div class="header-content">
     <div class="header-left">
       <div class="logoo">
-        <img src="/imagens/logo/Logoo.png ">
+        <img src="/imagens/logo/Logoo.png">
       </div>
       <div class="site-name">Bartô Info</div>
     </div>
 
     <div class="header-center">
       <ul class="menu">
-        <li><a href="/paginas/index.html">INÍCIO</a></li>
-        <li><a href="/paginas/sobre.html">SOBRE</a></li>
-        <li><a href="/paginas/cursos.html">CURSOS</a></li>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">SOBRE</a></li>
+        <li><a href="cursos.html">CURSOS</a></li>
       </ul>
     </div>
 
@@ -38,7 +43,38 @@
       <div class="quiz"><a href="/public/index.html">Quiz</a></div>
     </div>
   </div>
+
+
+  <!-- ====================== -->
+  <!--  MENU MOBILE CORRETO   -->
+  <!-- ====================== -->
+
+  <!-- Botão Hamburguer (agora no topo, separado do header desktop) -->
+  <div class="mobile-header">
+    <img src="/imagens/logo/Logoo.png" class="mobile-logo">
+    <div id="menu-toggle" class="menu-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <nav id="mobile-nav" class="mobile-nav">
+    <ul>
+      <li><a href="/paginas/index.html">Início</a></li>
+      <li><a href="/paginas/sobre.html">Sobre</a></li>
+      <li><a href="/paginas/cursos.html">Cursos</a></li>
+      <li><a href="/public/index.html" class="mobile-quiz">Quiz</a></li>
+    </ul>
+  </nav>
+
 </header>
+
+
+
+
+
 
 
 
@@ -64,8 +100,61 @@
     </div>
   </section>
 
+  <!-- Objetivos -->
+  <section class="objetivos">
+    <h2>Objetivos do Projeto</h2>
+
+    <div class="objetivo-row">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1000&q=80" alt="Cursos Técnicos">
+      <div class="objetivo-content">
+        <h3>Auxiliar na escolha de cursos técnicos</h3>
+        <p>Ajudamos estudantes a identificar qual curso está mais alinhado aos seus interesses e habilidades.</p>
+      </div>
+    </div>
+
+    <div class="objetivo-row reverse">
+      <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Evasão escolar">
+      <div class="objetivo-content">
+        <h3>Diminuir a evasão escolar</h3>
+        <p>Oferecemos informações claras para evitar desistências durante a trajetória educacional.</p>
+      </div>
+    </div>
+
+    <div class="objetivo-row reverse">
+     <img src="https://t4.ftcdn.net/jpg/01/90/47/95/360_F_190479583_4MceLszZ13jNEIHiD9iySCE2X4h9WpvR.jpg" alt="Informação">
+      <div class="objetivo-content">
+        <h3>Informar sobre cada curso técnico</h3>
+        <p>Disponibilizamos informações detalhadas sobre cada curso técnico oferecido pela instituição.</p>
+      </div>
+    </div>
+  </section>
+
+ <footer class="footer">
+
+  <div class="footer-contact">
+    <p>Email: <a href="mailto:e262.secretaria@etec.sp.gov.br">e262.secretaria@etec.sp.gov.br</a></p>
+    <p>WhatsApp: <a href="https://wa.me/5511990245508" target="_blank">(11) 99024-5508</a></p>
+  </div>
+
+  <div class="footer-social-wrapper">
+    <div class="footer-social">
+      <a href="https://www.instagram.com/etecanhanguera?igsh=MWJnNXhvYTV0bjA0dw=="><img src="/imagens/instagram.png" class="social-icon"></a>
+      <a href="https://www.facebook.com/share/1AAzm5iAnv/?mibextid=wwXIfr"><img src="/imagens/facebook.png" class="social-icon"></a>
+      <a href="https://wa.me/5511990245508"><img src="https://cdn-icons-png.flaticon.com/512/124/124034.png" class="social-icon"></a>
+    </div>
+  </div>
+
+  <hr class="footer-divider">
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Nome do Site. Todos os direitos reservados. | <a href="#">Política de Privacidade</a></p>
+  </div>
+
+</footer>
+
   
   <script src="/scripts/script.js"></script>
+  <script src="/scripts/menu.js"></script>
 </body>
 </html>
 <!-- JS <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80" alt="Carreira">

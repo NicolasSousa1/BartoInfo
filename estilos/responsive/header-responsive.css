@@ -1,0 +1,287 @@
+
+/* ===========================================
+   header-responsive.css — iOS-style premium
+   Includes: glassmorphism, spring open/close,
+   hamburger glow, press-down feedback, staggered items,
+   text shadow, and no interference with desktop.
+   Breakpoint: max-width: 900px
+   =========================================== */
+
+/* -----------------------------
+   Mobile styles (max-width: 900px)
+   ----------------------------- */
+@media (max-width: 900px) {
+
+  :root{
+    --menu-bg: rgba(255,255,255,0.62);
+    --menu-blur: 22px;
+    --menu-ease-in: cubic-bezier(.2, .9, .25, 1.2); /* springy */
+    --menu-ease-out: cubic-bezier(.22, 1.1, .32, 1);
+    --menu-duration: 480ms;
+    --item-duration: 420ms;
+    --shadow: 0 20px 40px rgba(0,0,0,0.12);
+  }
+
+  /* Prevent desktop header from blocking clicks */
+  #header {
+    position: relative !important;
+    background: none !important;
+    width: 100% !important;
+    left: 0 !important;
+    top: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    pointer-events: none !important;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    display: none !important;
+  }
+
+  /* Allow interactions for mobile elements */
+  .mobile-header,
+  .menu-toggle,
+  .mobile-nav {
+    pointer-events: auto !important;
+  }
+
+  /* =======================
+     Mobile top bar (glass)
+     ======================= */
+  .mobile-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    background: rgba(255,255,255,0.62);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    width: 100%;
+    height: 64px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 4000;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  }
+
+  .mobile-logo{ width: 42px; height: auto; }
+
+  /* ===================================
+     Hamburger (Apple-like) with glow
+     =================================== */
+  .menu-toggle {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 36px;
+    height: 28px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 5000 !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .menu-toggle span{
+    width: 28px;
+    height: 3px;
+    background: #0b0b0b;
+    border-radius: 999px;
+    transition: transform 240ms var(--menu-ease-in), opacity 180ms linear, background 180ms;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.02) inset;
+    transform-origin: center;
+  }
+
+  /* soft luminous halo behind the hamburger when active */
+  .menu-toggle::after{
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 14px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 250ms ease;
+    box-shadow: 0 8px 30px rgba(90,19,19,0.16); /* reddish glow subtle */
+  }
+
+  .menu-toggle.active::after{ opacity: 1; }
+
+  /* transform to X */
+  .menu-toggle.active span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
+  .menu-toggle.active span:nth-child(2){ opacity: 0; transform: scaleX(0.8); }
+  .menu-toggle.active span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
+
+  /* slight focus ring on touch (hardware-like feedback) */
+  .menu-toggle:active span{ transform: scale(0.98); }
+
+  /* ===================================
+     Mobile menu panel — glass + strong blur
+     =================================== */
+  .mobile-nav {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100vh;
+
+    /* glassmorphism iOS-18 style */
+    background: linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.66) 100%);
+    backdrop-filter: blur(var(--menu-blur)) saturate(150%);
+    -webkit-backdrop-filter: blur(var(--menu-blur)) saturate(150%);
+
+    /* visual depth */
+    box-shadow: var(--shadow);
+    border-radius: 0;
+    padding-top: 132px;
+
+    /* start hidden state: slightly up + transparent */
+    opacity: 0;
+    transform: translateY(-24px) scale(0.995);
+    pointer-events: none;
+
+    transition:
+      opacity calc(var(--menu-duration) * 0.9) ease,
+      transform calc(var(--menu-duration)) var(--menu-ease-in);
+
+    z-index: 3000 !important;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  /* ACTIVE: open state (spring animation will be triggered) */
+  .mobile-nav.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+    transition:
+      opacity calc(var(--menu-duration) * 0.9) ease,
+      transform calc(var(--menu-duration)) var(--menu-ease-out);
+  }
+
+
+  /* ======================
+     Staggered item list
+     ====================== */
+  .mobile-nav ul{
+    width: 100%;
+    max-width: 720px;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 32px !important;
+    align-items: center !important;
+    padding: 0 !important;
+    margin: 0 auto !important;
+    list-style: none !important;
+  }
+
+  .mobile-nav ul li{
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity var(--item-duration) cubic-bezier(.2,.9,.3,1), transform var(--item-duration) cubic-bezier(.2,.9,.3,1);
+  }
+
+  /* stagger delays on active */
+  .mobile-nav.active ul li:nth-child(1){ transition-delay: 0.06s; }
+  .mobile-nav.active ul li:nth-child(2){ transition-delay: 0.11s; }
+  .mobile-nav.active ul li:nth-child(3){ transition-delay: 0.16s; }
+  .mobile-nav.active ul li:nth-child(4){ transition-delay: 0.21s; }
+  .mobile-nav.active ul li{ opacity: 1; transform: translateY(0); }
+
+  .mobile-nav ul li a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px 18px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #050505;
+    text-decoration: none;
+    letter-spacing: 0.6px;
+    transition: transform 160ms ease, color 160ms ease;
+    /* subtle soft text-shadow for premium look */
+    text-shadow: 0 1px 0 rgba(255,255,255,0.22);
+  }
+
+  /* press-down feedback */
+  .mobile-nav ul li a:active{
+    transform: scale(0.985);
+    opacity: 0.95;
+  }
+
+  .mobile-nav ul li a:hover{
+    color: #8b1b1b;
+    transform: translateY(-2px) scale(1.02);
+  }
+
+  /* Quiz button slightly distinct */
+  .mobile-quiz{
+    display: inline-block;
+    margin-top: 6px;
+    background: linear-gradient(90deg,#6b1212,#8b1b1b);
+    color: #fff !important;
+    padding: 12px 28px;
+    border-radius: 12px;
+    font-size: 22px;
+    font-weight: 700;
+    box-shadow: 0 8px 30px rgba(90,19,19,0.14);
+  }
+
+  /* =====================
+     Spring "physics" using keyframes on open & close
+     ===================== */
+  @keyframes spring-open {
+    0%   { transform: translateY(-28px) scale(0.995); opacity: 0; }
+    45%  { transform: translateY(6px) scale(1.005); opacity: 1; }
+    70%  { transform: translateY(-4px) scale(0.999); }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+  }
+
+  @keyframes spring-close {
+    0%   { transform: translateY(0) scale(1); opacity: 1; }
+    30%  { transform: translateY(-6px) scale(0.995); opacity: 0.9; }
+    100% { transform: translateY(-28px) scale(0.98); opacity: 0; }
+  }
+
+  /* helper classes to trigger keyframes for strong spring both directions */
+  .mobile-nav.spring-open {
+    animation: spring-open calc(var(--menu-duration) + 120ms) var(--menu-ease-out) both;
+  }
+
+  .mobile-nav.spring-close {
+    animation: spring-close calc(var(--menu-duration) - 80ms) var(--menu-ease-in) both;
+  }
+
+  /* =====================================
+     Extra polish: small vignette + subtle edges
+     ===================================== */
+  .mobile-nav::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: 0;
+    box-shadow: inset 0 80px 160px rgba(0,0,0,0.06);
+    mix-blend-mode: normal;
+    opacity: 0.9;
+  }
+
+  /* ensure mobile hidden on large screens */
+  @media (min-width: 901px){
+    .mobile-header, .mobile-nav { display: none !important; }
+  }
+}
+
+/* =========================
+   Desktop: ensure mobile hidden above breakpoints
+   ========================= */
+@media (min-width: 901px){
+  .mobile-header, .mobile-nav { display: none !important; }
+}
