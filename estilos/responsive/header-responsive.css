@@ -1,4 +1,3 @@
-
 /* ===========================================
    header-responsive.css — iOS-style premium
    Includes: glassmorphism, spring open/close,
@@ -7,45 +6,24 @@
    Breakpoint: max-width: 900px
    =========================================== */
 
-/* -----------------------------
-   Mobile styles (max-width: 900px)
-   ----------------------------- */
 @media (max-width: 900px) {
 
   :root{
     --menu-bg: rgba(255,255,255,0.62);
     --menu-blur: 22px;
-    --menu-ease-in: cubic-bezier(.2, .9, .25, 1.2); /* springy */
+    --menu-ease-in: cubic-bezier(.2, .9, .25, 1.2);
     --menu-ease-out: cubic-bezier(.22, 1.1, .32, 1);
     --menu-duration: 480ms;
     --item-duration: 420ms;
     --shadow: 0 20px 40px rgba(0,0,0,0.12);
   }
 
-  /* Prevent desktop header from blocking clicks */
-  #header {
-    position: relative !important;
-    background: none !important;
-    width: 100% !important;
-    left: 0 !important;
-    top: 0 !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
-    pointer-events: none !important;
-  }
-
-  .header-left,
-  .header-center,
-  .header-right {
+  /* ===========================================
+     DESKTOP MENU DESATIVADO EM TELAS PEQUENAS
+     (sem pointer-events — solução 100% compatível)
+     =========================================== */
+  .header-content {
     display: none !important;
-  }
-
-  /* Allow interactions for mobile elements */
-  .mobile-header,
-  .menu-toggle,
-  .mobile-nav {
-    pointer-events: auto !important;
   }
 
   /* =======================
@@ -64,7 +42,10 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 4000;
+
+    /* Fica acima do fundo do menu */
+    z-index: 100000 !important;
+
     box-shadow: 0 6px 18px rgba(0,0,0,0.06);
   }
 
@@ -78,13 +59,18 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
+
     width: 36px;
     height: 28px;
+
     justify-content: center;
     align-items: center;
+
     cursor: pointer;
-    z-index: 5000 !important;
     -webkit-tap-highlight-color: transparent;
+
+    /* Sempre por cima de tudo */
+    z-index: 100001 !important;
   }
 
   .menu-toggle span{
@@ -97,7 +83,6 @@
     transform-origin: center;
   }
 
-  /* soft luminous halo behind the hamburger when active */
   .menu-toggle::after{
     content: "";
     position: absolute;
@@ -106,17 +91,15 @@
     pointer-events: none;
     opacity: 0;
     transition: opacity 250ms ease;
-    box-shadow: 0 8px 30px rgba(90,19,19,0.16); /* reddish glow subtle */
+    box-shadow: 0 8px 30px rgba(90,19,19,0.16);
   }
 
   .menu-toggle.active::after{ opacity: 1; }
 
-  /* transform to X */
   .menu-toggle.active span:nth-child(1){ transform: translateY(6px) rotate(45deg); }
   .menu-toggle.active span:nth-child(2){ opacity: 0; transform: scaleX(0.8); }
   .menu-toggle.active span:nth-child(3){ transform: translateY(-6px) rotate(-45deg); }
 
-  /* slight focus ring on touch (hardware-like feedback) */
   .menu-toggle:active span{ transform: scale(0.98); }
 
   /* ===================================
@@ -127,42 +110,41 @@
     top: 0; left: 0;
     width: 100%; height: 100vh;
 
-    /* glassmorphism iOS-18 style */
     background: linear-gradient(180deg, rgba(255,255,255,0.72) 0%, rgba(255,255,255,0.66) 100%);
     backdrop-filter: blur(var(--menu-blur)) saturate(150%);
     -webkit-backdrop-filter: blur(var(--menu-blur)) saturate(150%);
 
-    /* visual depth */
     box-shadow: var(--shadow);
     border-radius: 0;
     padding-top: 132px;
 
-    /* start hidden state: slightly up + transparent */
     opacity: 0;
     transform: translateY(-24px) scale(0.995);
+
+    /* fechado = não recebe clique */
     pointer-events: none;
 
     transition:
       opacity calc(var(--menu-duration) * 0.9) ease,
-      transform calc(var(--menu-duration)) var(--menu-ease-in);
+      transform var(--menu-duration) var(--menu-ease-in);
 
-    z-index: 3000 !important;
+    /* fundo fica abaixo do topo */
+    z-index: 99999 !important;
 
     display: flex;
     justify-content: center;
     align-items: flex-start;
   }
 
-  /* ACTIVE: open state (spring animation will be triggered) */
+  /* ativo = pode clicar */
   .mobile-nav.active {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
     transition:
       opacity calc(var(--menu-duration) * 0.9) ease,
-      transform calc(var(--menu-duration)) var(--menu-ease-out);
+      transform var(--menu-duration) var(--menu-ease-out);
   }
-
 
   /* ======================
      Staggered item list
@@ -187,7 +169,6 @@
     transition: opacity var(--item-duration) cubic-bezier(.2,.9,.3,1), transform var(--item-duration) cubic-bezier(.2,.9,.3,1);
   }
 
-  /* stagger delays on active */
   .mobile-nav.active ul li:nth-child(1){ transition-delay: 0.06s; }
   .mobile-nav.active ul li:nth-child(2){ transition-delay: 0.11s; }
   .mobile-nav.active ul li:nth-child(3){ transition-delay: 0.16s; }
@@ -206,11 +187,9 @@
     text-decoration: none;
     letter-spacing: 0.6px;
     transition: transform 160ms ease, color 160ms ease;
-    /* subtle soft text-shadow for premium look */
     text-shadow: 0 1px 0 rgba(255,255,255,0.22);
   }
 
-  /* press-down feedback */
   .mobile-nav ul li a:active{
     transform: scale(0.985);
     opacity: 0.95;
@@ -221,7 +200,6 @@
     transform: translateY(-2px) scale(1.02);
   }
 
-  /* Quiz button slightly distinct */
   .mobile-quiz{
     display: inline-block;
     margin-top: 6px;
@@ -234,9 +212,6 @@
     box-shadow: 0 8px 30px rgba(90,19,19,0.14);
   }
 
-  /* =====================
-     Spring "physics" using keyframes on open & close
-     ===================== */
   @keyframes spring-open {
     0%   { transform: translateY(-28px) scale(0.995); opacity: 0; }
     45%  { transform: translateY(6px) scale(1.005); opacity: 1; }
@@ -250,7 +225,6 @@
     100% { transform: translateY(-28px) scale(0.98); opacity: 0; }
   }
 
-  /* helper classes to trigger keyframes for strong spring both directions */
   .mobile-nav.spring-open {
     animation: spring-open calc(var(--menu-duration) + 120ms) var(--menu-ease-out) both;
   }
@@ -259,9 +233,6 @@
     animation: spring-close calc(var(--menu-duration) - 80ms) var(--menu-ease-in) both;
   }
 
-  /* =====================================
-     Extra polish: small vignette + subtle edges
-     ===================================== */
   .mobile-nav::before{
     content: "";
     position: absolute;
@@ -273,15 +244,50 @@
     opacity: 0.9;
   }
 
-  /* ensure mobile hidden on large screens */
-  @media (min-width: 901px){
-    .mobile-header, .mobile-nav { display: none !important; }
-  }
+  /* ===== FORCE HIDE DESKTOP HEADER IN MOBILE =====
+   Colocar DENTRO do @media (max-width: 900px) ao final
+*/
+#header,
+header {
+  /* remove visual do header principal */
+  background: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  left: 0 !important;
+  top: 0 !important;
 }
 
-/* =========================
-   Desktop: ensure mobile hidden above breakpoints
-   ========================= */
+/* garante que o conteúdo desktop suma */
+#header .header-content,
+.header-left,
+.header-center,
+.header-right,
+.menu,
+.menu li,
+.quiz {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* reduz a altura do header para não deixar "sombra" */
+#header {
+  min-height: 0 !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+
+}
+
+/* ===========================================
+   DESKTOP — garante que nada aparece
+   =========================================== */
 @media (min-width: 901px){
   .mobile-header, .mobile-nav { display: none !important; }
 }
