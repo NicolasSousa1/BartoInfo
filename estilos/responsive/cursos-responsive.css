@@ -1,0 +1,221 @@
+/* =====================================================
+   SLIDER: VERSÃO MOBILE RESPONSIVA (zoom reduzido)
+   Mantém o slider original — apenas escala e ajusta
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    /* Bloqueia rolagem lateral */
+    html, body {
+        overflow-x: hidden !important;
+        width: 100%;
+    }
+
+    /* Ajusta altura da seção */
+    .secao2 .terceira-tela {
+        height: auto;
+        padding: 40px 10px 60px 10px;
+        overflow-x: hidden !important;
+    }
+
+    .secao2 .terceira-tela h1 {
+        font-size: 32px;
+    }
+
+    .secao2 .terceira-tela p {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    /* 🔥 REDUÇÃO ELEGANTE DO SLIDER 3D */
+    .secao2 .terceira-tela .slider .cards {
+        min-height: 260px;
+        transform: scale(0.72);         /* zoom geral */
+        transform-origin: top center;
+        overflow: visible !important;
+    }
+
+    /* Cards reduzidos */
+    .secao2 .terceira-tela .slider .cards .item {
+        width: 260px;
+        height: 340px;
+        border-radius: 16px;
+        box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+    }
+
+    /* Título do curso menor */
+    .course-title {
+        font-size: 16px;
+        bottom: 50px;
+    }
+
+    /* Botão reduzido */
+    .btn-info {
+        width: 110px;
+        height: 40px;
+        margin-top: 250px;
+        font-size: 14px;
+    }
+
+    /* =====================================================
+       AJUSTE DOS TRANSFORM 3D PARA O NOVO TAMANHO
+       (mesmo efeito, só adaptado ao zoom)
+       ===================================================== */
+
+    #c-1:checked ~ .cards label[for="c-3"],
+    #c-2:checked ~ .cards label[for="c-4"],
+    #c-3:checked ~ .cards label[for="c-5"],
+    #c-4:checked ~ .cards label[for="c-1"],
+    #c-5:checked ~ .cards label[for="c-2"] {
+        transform: translate3d(380px, 0, -120px) rotateY(-20deg);
+    }
+
+    #c-1:checked ~ .cards label[for="c-2"],
+    #c-2:checked ~ .cards label[for="c-3"],
+    #c-3:checked ~ .cards label[for="c-4"],
+    #c-4:checked ~ .cards label[for="c-5"],
+    #c-5:checked ~ .cards label[for="c-1"] {
+        transform: translate3d(190px, 0, -60px) rotateY(-12deg);
+    }
+
+    #c-2:checked ~ .cards label[for="c-1"],
+    #c-3:checked ~ .cards label[for="c-2"],
+    #c-4:checked ~ .cards label[for="c-3"],
+    #c-5:checked ~ .cards label[for="c-4"],
+    #c-1:checked ~ .cards label[for="c-5"] {
+        transform: translate3d(-190px, 0, -60px) rotateY(12deg);
+    }
+
+    #c-3:checked ~ .cards label[for="c-1"],
+    #c-4:checked ~ .cards label[for="c-2"],
+    #c-5:checked ~ .cards label[for="c-3"],
+    #c-2:checked ~ .cards label[for="c-5"],
+    #c-1:checked ~ .cards label[for="c-4"] {
+        transform: translate3d(-380px, 0, -120px) rotateY(20deg);
+    }
+
+
+    /* seção detalhes */
+
+    /* Wrapper do painel */
+    .course-details-panel-wrapper {
+        padding: 0;
+        top: 0;
+        height: 100vh;
+        align-items: flex-start;
+    }
+
+    /* =====================================================
+       MODAL — versão quadrada + scroll interno
+       ===================================================== */
+    .modal-content-wrapper {
+        width: 88%;                     /* mais quadrado */
+        margin: 70px auto 0 auto;       /* menor margem superior */
+        padding: 18px 22px;             /* padding reduzido */
+
+        border-radius: 18px;
+
+        /* deixa o formato mais contido */
+        max-height: 75vh;
+        overflow-y: auto;
+
+        transform: scale(0.92);
+        transform-origin: top center;
+
+        background-color: #F8F6F4;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        position: relative;
+        transition: transform 0.3s ease;
+    }
+
+    .modal-content-wrapper:hover {
+        transform: scale(0.94);
+    }
+
+    /* =====================================================
+       IMAGEM — agora quadrada
+       ===================================================== */
+    .details-image-container {
+        width: 220px;
+        height: 220px;
+        margin: 0 auto;
+        flex-shrink: 0;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s ease;
+    }
+
+    .details-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;   
+        object-position: center;
+        display: block;
+    }
+
+    .details-image-container:hover {
+        transform: scale(1.03);
+    }
+
+    /* =====================================================
+       Layout interno do modal
+       ===================================================== */
+    .course-details-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 18px;
+        width: 100%;
+    }
+
+    /* Título mais suave */
+    #details-title {
+        font-size: 1.9rem;
+        font-weight: 800;
+        color: #5A1313;
+        margin-bottom: 10px;
+        border-bottom: 3px solid #BF3A3A;
+        padding-bottom: 6px;
+    }
+
+    /* Texto descritivo */
+    #details-description {
+        font-size: 1rem;
+        color: #222;
+        line-height: 1.6;
+        margin-bottom: 18px;
+        text-align: justify;
+        width: 100%;
+    }
+
+    /* Botão */
+    .btn-matricula {
+        width: 100%;
+        text-align: center;
+        font-size: 1rem;
+        padding: 12px 0;
+    }
+
+    /* Botão fechar ajustado */
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+        color: #5A1313;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+        color: #BF3A3A;
+    }
+}
+
+
+
+
+
