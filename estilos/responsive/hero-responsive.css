@@ -1,0 +1,107 @@
+/* ===========================================================
+   HERO — MOBILE (até 900px)
+   Imagem inteira + card translúcido + animação suave
+   =========================================================== */
+
+@media (max-width: 900px) {
+
+    /* HERO vira coluna */
+    .hero {
+        height: auto !important;
+        padding: 120px 20px 40px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        overflow: hidden;
+
+        /* 📌 AQUI ESTÁ A IMAGEM CORRETA */
+        background-image: url('/imagens/eteec.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: brightness(0.95);
+    }
+
+    /* Remove completamente o fundo vermelho + diagonal */
+    .hero-bg,
+    .hero-bg::before,
+    .hero-content {
+        display: none !important;
+    }
+
+    /* ========= CARD TRANSLÚCIDO ========= */
+    /* Glow suave + card translúcido mais visível */
+/* ========= HERO-CARD — Glow Vermelho Leve ========= */
+.hero-card {
+    position: relative;
+    z-index: 3;
+
+    /* Levemente mais opaco para dar destaque sem sumir */
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    /* ⭐ Glow vermelho leve e suave */
+    box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.20),     /* sombra suave */
+        0 0 12px rgba(200, 0, 0, 0.25),     /* glow principal (leve) */
+        0 0 20px rgba(200, 0, 0, 0.12);     /* glow difuso quase imperceptível */
+
+    border-radius: 22px;
+
+    padding: 26px 24px;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+
+    opacity: 0;
+    transform: translateY(16px) scale(0.97);
+    animation: heroCardAppear 0.75s cubic-bezier(.16,.56,.32,1) forwards;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+
+
+    @keyframes heroCardAppear {
+        to {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+
+    /* Tipografia */
+    .hero-card h1 {
+        font-size: clamp(1.45rem, 5vw, 1.9rem);
+        font-weight: 700;
+        color: #111;
+        line-height: 1.22;
+    }
+
+    .hero-card p {
+        font-size: clamp(1rem, 3.8vw, 1.25rem);
+        color: #333;
+        line-height: 1.45;
+    }
+
+    /* Esconde o HERO desktop */
+    .hero-text:not(.hero-card) {
+        display: none !important;
+    }
+}
+
+
+/* ===========================================================
+   HERO — DESKTOP (maior que 900px)
+   Mantém tudo original
+   =========================================================== */
+
+@media (min-width: 901px) {
+    .hero-card {
+        display: none !important;
+    }
+}
