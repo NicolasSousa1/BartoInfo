@@ -1,0 +1,35 @@
+/* ============================= */
+/* RESPONSIVIDADE DA SEÇÃO VINHO */
+/* ============================= */
+
+@media (max-width: 960px) {
+
+  .conteudoo {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+    transform: scale(0.95); /* efeito de zoom igual à página de cursos */
+    transition: transform .3s ease;
+  }
+
+  .secao-vinho .texto {
+    font-size: 1.45rem;
+  }
+
+  .secao-vinho .imagem img {
+    width: 100%;
+    max-height: 360px;
+    object-fit: cover;
+  }
+}
+
+/* Zoom ainda menor para telas muito pequenas */
+@media (max-width: 600px) {
+  .conteudoo {
+    transform: scale(0.88);  /* suave e bonito */
+  }
+
+  .secao-vinho .texto h2 {
+    font-size: 1.8rem;
+  }
+}
