@@ -1,70 +1,280 @@
-/* Seção Objetivos */
-.objetivos {
-  padding: 80px 20px;
+
+:root {
+  --sombra: 0 4px 12px rgba(0,0,0,0.15);
+  --radius: 14px;
+  --trans: .3s ease;
+}
+
+.secao {
+  padding: 70px 8%;
+}
+
+.secao-branco {
+  background: #f5f5f5;
+}
+
+
+
+.secao-vinho {
+  background: #330606;
+  color: var(--branco);
+}
+
+
+.titulo-lindo {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.titulo-lindoo {
+  font-size: 2.4rem;
+  font-weight: 900;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  position: relative;
+  color: #f5f5f5;
+}
+
+
+.titulo-central {
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto;
 }
- 
-.objetivos h2 {
-  font-size: 2rem;
-  margin-bottom: 50px;
-  color: #fff;
-}
- 
-.objetivo-row {
+
+
+.conteudo {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
-  gap: 40px;
-  background: #f0f0f0;
-  border-radius: 12px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
-  overflow: hidden;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: all 0.8s ease;
+  gap: 50px;
 }
- 
-.objetivo-row.show {
-  opacity: 1;
-  transform: translateY(0);
+
+.conteudoo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+   color: #f5f5f5;
 }
- 
-.objetivo-row img {
-  width: 50%;
+
+
+
+.texto {
+  flex: 1;
+  font-size: 1.7rem;
+}
+
+
+.imagem {
+  flex: 1;
+}
+
+.imagem img {
+  width: 100%;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
   object-fit: cover;
 }
- 
-.objetivo-content {
-  width: 50%;
-  padding: 30px;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+
+
+
+/* ---------------------- */
+/* RELATOS DOS ALUNOS     */
+/* ---------------------- */
+
+.relatos {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
- 
-.objetivo-row.show .objetivo-content {
-  opacity: 1;
-  transform: translateY(0);
-  transition-delay: 0.3s;
+
+.relato-card {
+  background: var(--branco);
+  width: 320px;
+  padding: 20px;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  text-align: center;
+  transition: var(--trans);
 }
- 
-.objetivo-content h3 {
-  color: #000;
+
+.relato-card:hover {
+  transform: translateY(-6px);
+}
+
+.relato-card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
   margin-bottom: 15px;
-  font-size: 2rem;
-  transition: color 0.3s;
+  object-fit: cover;
 }
- 
-.objetivo-content h3:hover { color: #e60000; }
- 
-.objetivo-content p {
-  font-size: 1,5rem;
-  color: #333;
-  line-height: 1.6;
+
+.info-section {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 60px 8%;
+  flex-wrap: wrap;
 }
- 
-.reverse { flex-direction: row-reverse; }
+
+.info-box {
+  background: #5A1313;
+  padding: 25px;
+  width: 300px;
+  border-radius: var(--radius);
+  box-shadow: var(--sombra);
+  text-align: center;
+  color: white;
+}
+
+.info-box h2 {
+  margin-bottom: 10px;
+  color: white;
+}
+
+.containerMapa {
+  max-width: 1400px; /* controla a largura; ajuste se quiser */
+  margin: 0 auto; /* deixa espaço dos lados e centraliza */
+  padding: 20px; /* mais espaço interno opcional */
+}
+
+.containerMapa iframe {
+  width: 100%;
+  height: 450px;
+  border: 0;
+  border-radius: 20px; /* bordas arredondadas */
+  overflow: hidden;
+}
+@media (max-width: 960px) {
+  .conteudo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .conteudo.invertido {
+    flex-direction: column;
+  }
+
+  .imagem img {
+    width: 100%;
+    max-height: 350px;
+  }
+}
+
+@media (max-width: 600px) {
+  .titulo-lindo {
+    font-size: 1.9rem;
+  }
+
+  .valor-card,
+  .novo-card,
+  .relato-card,
+  .info-box {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* Seção */
+.flip-section {
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #4a0013, #7a0020);
+  text-align: center;
+  color: #fff;
+}
+
+.flip-titulo {
+  font-size: 45px;
+  margin-bottom: 60px;
+  font-weight: 900;
+  text-align: center;
+ }
+
+/* Container */
+.flip-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.flip-card {
+  width: 420px;
+  height: 450px;
+  perspective: 1300px; /* ESSENCIAL PARA O EFEITO 3D */
+}
+
+/* Área rotacionável */
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s ease;
+  transform-style: preserve-3d;
+}
+
+/* Quando passa o mouse: rotaciona */
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Frente e verso */
+.flip-front,
+.flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  backface-visibility: hidden; /* IMPEDIR A FRENTE APARECER APÓS O GIRO */
+  box-shadow: 0 25px 45px rgba(0,0,0,0.35);
+}
+
+/* Frente - só a imagem */
+.flip-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Verso */
+.flip-back {
+  background: #ffffff;
+  transform: rotateY(180deg);
+  padding: 40px 30px;
+  text-align: left;
+}
+
+.flip-back h3 {
+  font-size: 28px;
+  color: #5a0016;
+  margin-bottom: 15px;
+}
+
+.flip-back p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.info-section-wrapper {
+  padding: 70px 8%;
+  text-align: center;
+  background: #330606; /* use o fundo que preferir */
+  color: white;
+}
+
+.infoo {
+  font-size: 45px;
+  margin-bottom: 40px;
+  font-weight: 900;
+  text-align: center;
+  color: #ffffff;
+
+}
