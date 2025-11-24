@@ -4,6 +4,23 @@
 
 @media (max-width: 960px) {
 
+  /* Remove qualquer scroll lateral */
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
+/* Garante que o hero diminuído não gere overflow */
+.hero {
+  overflow: hidden;
+}
+
+/* Seções vinho com scale não podem ultrapassar */
+.secao-vinho {
+  overflow-x: hidden;
+}
+
+
   .conteudoo {
     flex-direction: column !important;
     text-align: center;
