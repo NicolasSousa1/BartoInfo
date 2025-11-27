@@ -1,4 +1,16 @@
 /* Seção Objetivos */
+
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+}
+
 .objetivos {
   padding: 80px 20px;
   text-align: center;
