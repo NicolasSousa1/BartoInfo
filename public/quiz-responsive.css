@@ -1,0 +1,168 @@
+
+/* ===========================================
+   === TABLETS E CELULARES GRANDES (ATÉ 800px)
+   =========================================== */
+@media (max-width: 800px) {
+  
+  .quiz-box {
+    padding: 25px 20px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  #resultado {
+    padding: 15px 8px;
+  }
+}
+
+
+/* ===========================================
+   === CELULARES MÉDIOS (ATÉ 600px)
+   =========================================== */
+@media (max-width: 600px) {
+  header {
+    padding: 10px 20px;
+  }
+
+  .site-name {
+    font-size: 1.2rem;
+  }
+
+  .menu li a {
+    font-size: 14px;
+    letter-spacing: 0;
+  }
+
+  .quiz a {
+    font-size: 22px;
+  }
+
+  .quiz-box {
+    width: 95%;
+    padding: 20px 15px;
+  }
+
+  select, textarea {
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 10px 28px;
+    font-size: 1rem;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .card h3 {
+    font-size: 1.15em;
+  }
+
+  .card p {
+    font-size: 0.95em;
+  }
+}
+
+
+/* ===========================================
+   === CELULARES PEQUENOS (ATÉ 500px)
+   =========================================== */
+@media (max-width: 500px) {
+  header {
+    padding: 8px 15px;
+  }
+
+  .header-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .header-left,
+  .header-center,
+  .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .site-name {
+    font-size: 1.1rem;
+    margin-right: 0;
+  }
+
+  .menu {
+    gap: 10px;
+  }
+
+  .menu li a {
+    font-size: 13px;
+  }
+
+  .quiz-box {
+    padding: 15px 12px;
+  }
+
+  .quiz-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .quiz-box p {
+    font-size: 0.95rem;
+  }
+
+  #resultado {
+    padding: 12px 5px;
+    gap: 15px;
+  }
+
+  .card {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.9rem;
+  }
+}
+
+
+/* ===========================================
+   === MICRO-TELAS (ATÉ 380px)
+   =========================================== */
+@media (max-width: 380px) {
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .menu li a {
+    font-size: 12px;
+  }
+
+  .site-name {
+    font-size: 1rem;
+  }
+
+  .quiz a {
+    font-size: 18px;
+  }
+
+  label {
+    font-size: 0.9rem;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .card p {
+    font-size: 0.85rem;
+  }
+}

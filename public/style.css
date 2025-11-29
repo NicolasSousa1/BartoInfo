@@ -1,76 +1,57 @@
-/* === Estilo do Quiz IA (mesmo tema do site InfoTec) === */
+/* === Reset === */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
- 
+
+/* === Base === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #A30404;
   color: #111;
   line-height: 1.6;
 }
- 
-.logo {
+
+/* === Logos === */
+.logo, .logoo {
   position: absolute;
-  top: 40px;
   left: 45px;
-  right: 1000px;
+  z-index: 2;
+}
+
+.logo {
+  top: 40px;
+  width: 40px;
+}
+
+.logo img {
   width: 40px;
   height: auto;
-  z-index: 2;
 }
-.logo img {
-  width: 40px; /* ou outro valor menor se quiser ainda mais compacto */
-  height: auto;
-}
+
 .logoo {
   display: none;
-  position: absolute;
   top: 10px;
-  left: 45px;
-  right: 1000px;
   width: 43px;
-  height: auto;
-  z-index: 2;
 }
+
 .logoo img {
-  width: 10px; /* ou outro valor menor se quiser ainda mais compacto */
+  width: 10px;
   height: auto;
 }
- 
-/* Logo aparece somente quando o header estiver "scrolled" */
+
+/* Logo ao rolar */
 header.scrolled .logoo {
   display: block;
-  position: absolute;
   top: 20px;
-  left: 45px;
-  z-index: 2;
 }
- 
+
 header.scrolled .logoo img {
-  width: 25px;  /* ou outro tamanho desejado */
-  height: auto;
+  width: 25px;
 }
- 
-header.scrolled .header-left {
-  width: 100%;
-  justify-content: center;
-}
- 
-header.scrolled .site-name {
-  margin-right: 0;
-  text-align: center;
-}
- 
-.site-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #000;
-  margin-right: 15px; /* diminui o espaço entre site-name e itens do menu */
-}
- 
+
+/* === HEADER === */
 header {
   padding: 15px 50px;
   position: fixed;
@@ -82,54 +63,60 @@ header {
   background: linear-gradient(to right, #fff 75%, #590707 25%);
   z-index: 1000;
 }
- 
-/* Versão scrolled — tela toda */
+
 header.scrolled {
   top: 0;
   left: 0;
   width: 100%;
-  border-radius: 0%;
+  border-radius: 0;
   background: linear-gradient(to right, #fff 80%, #590707 20%);
 }
- 
-/* Container interno do header */
+
 .header-content {
   display: flex;
   height: 100%;
 }
- 
-/* === BLOCO ESQUERDO (site-name) === */
+
+/* LEFT */
 .header-left {
-  width: 30%; /* ajustável */
+  width: 30%;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
 }
- 
-/* site-name já definido acima */
- 
+
+/* Site Name */
 .site-name {
   font-size: 1.5rem;
   font-weight: 700;
   color: #000;
+  margin-right: 15px;
 }
- 
-/* === BLOCO CENTRAL (menu) === */
+
+/* Scrolled header adjustments */
+header.scrolled .header-left {
+  width: 100%;
+  justify-content: center;
+}
+
+header.scrolled .site-name {
+  margin-right: 0;
+  text-align: center;
+}
+
+/* CENTER */
 .header-center {
-  width: 40%; /* ajustável */
+  width: 40%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
- 
+
 .menu {
   list-style: none;
   display: flex;
-  gap: 25px; /* diminui espaço entre os itens do menu */
-  margin: 0;
-  padding: 0;
+  gap: 25px;
 }
- 
+
 .menu li a {
   text-decoration: none;
   color: #000;
@@ -139,33 +126,33 @@ header.scrolled {
   text-transform: uppercase;
   transition: color 0.3s;
 }
- 
+
 .menu li a:hover {
   color: #e60000;
 }
- 
+
+/* RIGHT */
 .header-right {
-  width: 30%; /* mesmo percentual do gradiente vermelho */
+  width: 30%;
   display: flex;
-  justify-content: center; /* Alinhando à esquerda */
+  justify-content: center;
   align-items: center;
-  padding-left: 85px; /* Ajustando a div mais para a direita */
+  padding-left: 85px;
 }
- 
+
 .quiz a {
   color: #fff;
   font-size: 28px;
   font-weight: 700;
-  letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
-  text-align: center;
 }
- 
+
 .quiz a:hover {
   color: #ffbbbb;
 }
 
+/* === QUIZ LAYOUT === */
 .quiz-container {
   padding-top: 180px;
   display: flex;
@@ -181,8 +168,8 @@ header.scrolled {
   padding: 40px 50px;
   margin-bottom: 20px;
   border-radius: 15px;
-  max-width: 700px;
-  width: 90%;
+  max-width: 1600px;
+  width: 70%;
   box-shadow: 0 8px 25px rgba(0,0,0,0.2);
   animation: fadeInUp 0.6s ease forwards;
 }
@@ -199,6 +186,7 @@ header.scrolled {
   margin-bottom: 25px;
 }
 
+/* Form */
 label {
   display: block;
   margin-top: 20px;
@@ -239,33 +227,30 @@ button:hover {
   background: #590707;
 }
 
+/* === RESULTADO (CARDS EM LINHA) === */
 #resultado {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  padding: 20px 10px;
   margin-top: 30px;
   text-align: center;
-  font-size: 1.1rem;
-  color: #111;
   background: #f6f6f6;
-  padding: 15px;
   border-radius: 10px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
 }
 
-/* Reaproveita animações do site */
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-/* === Cards Modernos com ícones === */
+/* CARD */
 .card {
+  flex: 1 1 300px;
   background: #ffffff;
   border: 1px solid #e5e5e5;
   padding: 22px;
   border-radius: 16px;
-  margin: 22px 0;
   box-shadow: 0 4px 12px rgba(0,0,0,0.12);
   animation: slideUp 0.5s ease forwards;
-  opacity: 0;
+  opacity: 0; /* inicia animando */
 }
 
 .card h3 {
@@ -278,10 +263,6 @@ button:hover {
   gap: 8px;
 }
 
-.card .icon {
-  font-size: 1.4em;
-}
-
 .card p {
   margin: 0;
   line-height: 1.65em;
@@ -289,7 +270,11 @@ button:hover {
   font-size: 1.05em;
 }
 
-/* === Loading bar === */
+.card .icon {
+  font-size: 1.4em;
+}
+
+/* Loading bar */
 .loading-bar {
   width: 100%;
   height: 8px;
@@ -306,25 +291,30 @@ button:hover {
   animation: loadProgress 3s linear infinite;
 }
 
-@keyframes loadProgress {
-  0% { width: 0%; }
-  100% { width: 100%; }
-}
-
-/* === Animação dos cards === */
-@keyframes slideUp {
-  from { opacity: 0; transform: translateY(25px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
+/* ERRO */
 .card-error {
   border-color: #c00000;
   color: #c00000;
   box-shadow: 0 4px 12px rgba(192, 0, 0, 0.25);
 }
 
+/* === Animações === */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-/* Rodapé */
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 100%; }
+}
+
+/* === Rodapé === */
 footer {
   background: #fff;
   color: #000;
@@ -333,11 +323,14 @@ footer {
   border-top: 2px solid #ddd;
   font-size: 0.95rem;
 }
- 
+
 footer a {
   color: #000;
   text-decoration: none;
   transition: color 0.3s;
 }
- 
-footer a:hover { color: #e60000; }
+
+footer a:hover {
+  color: #e60000;
+}
+
