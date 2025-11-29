@@ -8,7 +8,7 @@
 /* === Base === */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #A30404;
+  background: linear-gradient(to bottom right, #330606 30%, #A30404);
   color: #111;
   line-height: 1.6;
 }
@@ -159,7 +159,7 @@ header.scrolled .site-name {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #330606, #A30404);
+  background: linear-gradient(to bottom right, #330606 5%, #A30404);
 }
 
 .quiz-box {
