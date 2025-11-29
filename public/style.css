@@ -314,23 +314,3 @@ button:hover {
   100% { width: 100%; }
 }
 
-/* === Rodapé === */
-footer {
-  background: #fff;
-  color: #000;
-  text-align: center;
-  padding: 20px;
-  border-top: 2px solid #ddd;
-  font-size: 0.95rem;
-}
-
-footer a {
-  color: #000;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-footer a:hover {
-  color: #e60000;
-}
-
