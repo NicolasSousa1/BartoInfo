@@ -16,7 +16,7 @@
 
 
 .secao-vinho {
-  background: #330606;
+  background: linear-gradient(to bottom right, #330606 40%, #A30404);
   color: var(--branco);
 }
 
@@ -56,6 +56,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 50px;
+  margin-top: 20px;
    color: #f5f5f5;
 }
 
@@ -266,7 +267,7 @@
 .info-section-wrapper {
   padding: 70px 8%;
   text-align: center;
-  background: #330606; /* use o fundo que preferir */
+  
   color: white;
 }
 

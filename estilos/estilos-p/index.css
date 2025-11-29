@@ -231,7 +231,7 @@ color: #fff;
 
 /* Seção branca com card + texto */
 .criador-section {
-  background-color: #330606;
+  background: linear-gradient(to bottom right, #330606 30%, #A30404);
   display: flex;
   align-items: center;
   justify-content: center;

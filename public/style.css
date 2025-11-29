@@ -159,7 +159,7 @@ header.scrolled .site-name {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background: linear-gradient(to bottom right, #590707, #A30404);
+  background: linear-gradient(to bottom right, #330606, #A30404);
 }
 
 .quiz-box {

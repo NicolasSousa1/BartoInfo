@@ -1,7 +1,7 @@
 /* Hero */
 .hero {
   position: relative;
-  background:#5A1313;
+  background: linear-gradient(to bottom right, #330606 20%, #A30404);
   height: 100vh;
   display: flex;
   align-items: center;
