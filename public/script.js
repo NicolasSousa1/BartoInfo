@@ -7,7 +7,7 @@ document.getElementById("quizForm").addEventListener("submit", async (e) => {
   const resultadoDiv = document.getElementById("resultado");
   resultadoDiv.innerHTML = `
     <div class="card card-loading">
-      <h3><span class="icon">⌛</span> Analisando suas respostas...</h3>
+      <h3>Analisando suas respostas...</h3>
       <div class="loading-bar">
         <div class="loading-fill"></div>
       </div>
