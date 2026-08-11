@@ -67,7 +67,7 @@ app.get("/", (req, res) => {
 
 
 // ---------------------------------------------------------------
-// 🔥 Rota FINAL do Quiz (única, corrigida e formatada)
+// Rota FINAL do Quiz
 // ---------------------------------------------------------------
 app.post("/quiz", async (req, res) => {
   try {
